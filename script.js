@@ -270,7 +270,7 @@ function checkAnswer(char, selected, correct) {
     progressData[key] = (progressData[key] || 0) + 1;
     saveProgress();
 
-    feedback.textContent = "Benar! [THUMBS UP]";
+    feedback.textContent = "Benar! [👍🏻]";
     feedback.className = "feedback correct";
 
     options.forEach((option) => {
