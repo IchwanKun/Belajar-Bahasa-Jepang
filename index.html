@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Belajar Bahasa Jepang Lengkap</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Mari Belajar Bahasa Jepang Lengkap!</h1>
+    <div style="text-align: center; margin: 10px 0">
+      <button
+        class="tab-btn"
+        id="toggle-theme"
+        onclick="toggleTheme()"
+        aria-label="Toggle dark/light mode"
+      >
+        Mode Gelap/Terang
+      </button>
+    </div>
+    <p>
+      Pelajari semua karakter penting dalam bahasa Jepang: Hiragana, Katakana,
+      dan Kanji Dasar.
+    </p>
+
+    <div class="tab-buttons" role="tablist">
+      <button
+        class="tab-btn active"
+        onclick="openTab('hiragana')"
+        role="tab"
+        aria-selected="true"
+        aria-controls="hiragana"
+        id="tab-hiragana"
+      >
+        Hiragana
+      </button>
+      <button
+        class="tab-btn"
+        onclick="openTab('katakana')"
+        role="tab"
+        aria-selected="false"
+        aria-controls="katakana"
+        id="tab-katakana"
+      >
+        Katakana
+      </button>
+      <button
+        class="tab-btn"
+        onclick="openTab('kanji')"
+        role="tab"
+        aria-selected="false"
+        aria-controls="kanji"
+        id="tab-kanji"
+      >
+        Kanji Dasar
+      </button>
+    </div>
+
+    <button class="practice-btn" onclick="startPracticeSession()">
+      Mulai Latihan
+    </button>
+
+    <div
+      id="hiragana"
+      class="tab-content active"
+      role="tabpanel"
+      aria-labelledby="tab-hiragana"
+    >
+      <div class="alphabet-section">
+        <h2>Hiragana</h2>
+        <div class="alphabet-grid" id="hiragana-grid"></div>
+      </div>
+    </div>
+
+    <div
+      id="katakana"
+      class="tab-content"
+      role="tabpanel"
+      aria-labelledby="tab-katakana"
+      hidden
+    >
+      <div class="alphabet-section">
+        <h2>Katakana</h2>
+        <div class="alphabet-grid" id="katakana-grid"></div>
+      </div>
+    </div>
+
+    <div
+      id="kanji"
+      class="tab-content"
+      role="tabpanel"
+      aria-labelledby="tab-kanji"
+      hidden
+    >
+      <div class="alphabet-section">
+        <h2>Kanji Dasar</h2>
+        <div class="alphabet-grid" id="kanji-grid"></div>
+      </div>
+    </div>
+
+    <!-- Modal untuk latihan -->
+    <div
+      class="modal"
+      id="practice-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="practice-title"
+      tabindex="-1"
+    >
+      <div class="modal-content">
+        <h2 id="practice-title">Latihan Menebak Karakter</h2>
+        <div class="quiz-char" id="quiz-char">あ</div>
+        <p>Apa bacaan/arti karakter ini?</p>
+        <div class="quiz-options" id="quiz-options"></div>
+        <div class="feedback" id="feedback" role="alert"></div>
+      </div>
+    </div>
+
+    <!-- Modal hasil latihan -->
+    <div
+      class="modal"
+      id="result-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="result-title"
+      tabindex="-1"
+    >
+      <div class="modal-content result-modal">
+        <h2 id="result-title">Hasil Latihan</h2>
+        <div class="result-score" id="result-score"></div>
+        <p id="result-message"></p>
+        <button class="close-modal" onclick="closeResultModal()">Tutup</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
